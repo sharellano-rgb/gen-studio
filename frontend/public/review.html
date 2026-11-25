@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Revisar vídeo · GEN STUDIO</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/review-player.css">
+    <script src="/review-player.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <header><a href="/">GEN STUDIO</a><span>Revisión privada</span></header>
+      <h1>Revisar vídeo</h1>
+      <p>Con Tailscale activo, pulsa Reproducir. También puedes descargar el archivo para verlo en tu teléfono.</p>
+      <nav aria-label="Vista de revisión" hidden>
+        <button id="candidate" type="button" aria-pressed="true">Resultado</button>
+        <button id="comparison" type="button" aria-pressed="false">Comparación</button>
+      </nav>
+      <video id="video" controls playsinline preload="metadata" aria-label="Vídeo de revisión"></video>
+      <p id="status" role="status" aria-live="polite">Cargando vídeo…</p>
+      <div class="actions">
+        <button id="play" type="button" disabled>Reproducir</button>
+        <a id="open" target="_blank" rel="noopener" hidden>Abrir MP4</a>
+        <a id="download" download hidden>Descargar MP4</a>
+      </div>
+      <p id="description">Copia de revisión de GEN STUDIO.</p>
+    </main>
+  </body>
+</html>

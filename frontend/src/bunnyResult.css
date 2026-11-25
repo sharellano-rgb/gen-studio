@@ -1,0 +1,28 @@
+.bunny-result-review{min-width:0}
+.bunny-result-summary{display:flex;flex-wrap:wrap;gap:6px 12px;color:#b7ccc1;font-size:12px;margin:4px 0 18px}
+.bunny-result-modes{display:flex;gap:4px;padding:4px;margin-bottom:16px;border:1px solid #375046;border-radius:10px;background:#10191b}
+.bunny-result-modes>button{flex:1;min-width:0;min-height:44px;border:0;border-radius:7px;padding:10px 8px;background:transparent;color:#b6c9c0;font-size:13px}
+.bunny-result-modes>button[aria-pressed=true]{background:#2c4e41;color:#d6fff0}
+.bunny-result-modes>button:focus-visible,.bunny-result-download:focus-visible{outline:2px solid #86e6cd;outline-offset:3px}
+.bunny-result-review>.result-comparison{margin:0;padding:14px}
+.bunny-result-review .comparison-pair{gap:10px}
+.bunny-result-review .comparison-pair figcaption{font-size:12px}
+.bunny-result-review .comparison-window{aspect-ratio:3/4;max-height:380px;touch-action:manipulation}
+.bunny-result-review .comparison-window video{height:100%;max-height:none;border-radius:0}
+.bunny-result-review .comparison-controls button{font-size:12px!important;line-height:1.5;padding:9px 6px!important}
+.bunny-result-review .comparison-timeline{font-size:12px;margin:12px 0}
+.bunny-result-review .comparison-zoom{display:flex;flex-wrap:wrap;font-size:13px}
+.bunny-result-review .comparison-timeline input{padding:0;background:none;border:0;accent-color:#86e6cd}
+.bunny-result-review .quality-notes p{font-size:12px;line-height:1.6}
+.bunny-result-review .quality-notes h4{font-size:14px}
+.bunny-result-review .quality-note-editor input,.bunny-result-review .quality-note-editor select,.bunny-result-review .quality-note-editor textarea{font-size:16px}
+.bunny-result-download{display:flex;justify-content:center;align-items:center;min-height:46px;padding:12px;margin-top:18px;border:1px solid #466b5c;border-radius:9px;background:#25473a;color:#cefae5;font-size:14px}
+.bunny-result .bunny-process-details{border-top:1px solid #314439;margin-top:20px;padding-top:12px}
+.bunny-result .bunny-process-details>summary{min-height:44px;display:flex;align-items:center;cursor:pointer;color:#adc5b8;font-size:13px}
+@media(max-width:820px){
+.bunny-result-review .comparison-pair{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.bunny-result-review .comparison-window{aspect-ratio:9/16;max-height:300px}
+.bunny-result-review .comparison-controls{display:grid;grid-template-columns:1fr 1.4fr 1fr}
+.bunny-result-review .comparison-controls button{min-width:0;white-space:normal;font-size:11px!important}
+.bunny-result-review>.result-comparison{padding:10px}
+}

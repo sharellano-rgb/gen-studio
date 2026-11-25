@@ -1,0 +1,89 @@
+/* Shared composer layout: presentation only, without changing engine contracts. */
+.app .studio-step{min-width:0;border:1px solid #344640;border-radius:12px;margin:12px 0;background:#121d1d;overflow:hidden}
+.app .studio-step-heading{margin:0;font-size:14px}
+.app .studio-step-heading>button{display:flex;align-items:center;gap:12px;width:100%;min-height:66px;padding:13px 14px;border:0;border-radius:0;background:transparent;color:#e2eee9;text-align:left;font:inherit;cursor:pointer}
+.app .studio-step-heading>button:hover{background:#1d302a}
+.app .studio-step-heading>button:focus-visible{outline:2px solid #86e6cd;outline-offset:-3px}
+.app .studio-step-number{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:#203b32;color:#a2e7d2;font-size:12px;font-variant-numeric:tabular-nums}
+.app .studio-step-title{display:grid;gap:4px;min-width:0;flex:1}
+.app .studio-step-title strong{font-size:14px;font-weight:600}
+.app .studio-step-title small{font-size:12px;line-height:1.4;color:#a9beb5;overflow-wrap:anywhere;font-weight:400}
+.app .studio-step-toggle{color:#b2dbca;font-size:20px;flex:none}
+.app .studio-step-content{padding:0 14px 15px;border-top:1px solid #2e423a}
+.app .studio-step-content[hidden],.app .engine-picker-options[hidden]{display:none}
+.app .studio-step-content>.composer-source{margin-top:14px}
+.app .studio-step-content>*{min-width:0}
+.app .studio-step.is-open .studio-step-number{background:#2b5547;color:#d5ffed}
+.creative-studio .studio-composer .studio-step-content .composer-hint{font-size:12px;color:#abbdb5}
+.app .engine-picker{padding:0}
+.app .engine-picker-summary{display:flex;justify-content:space-between;align-items:center;gap:14px;width:100%;min-height:62px;padding:12px 16px;border:0;background:none;color:#dcece4;text-align:left;cursor:pointer}
+.app .engine-picker-summary>span:first-child{display:grid;gap:4px;min-width:0}
+.app .engine-picker-summary small{font-size:11px;color:#a6bfb3}
+.app .engine-picker-summary strong{font-size:14px;font-weight:600;overflow-wrap:anywhere}
+.app .engine-picker-action{font-size:12px;color:#a4e7d0;white-space:nowrap}
+.app .engine-picker-options{padding:0 12px 12px}
+.app .engine-picker-options button{min-height:58px}
+.studio-view-switch{display:none}
+.creative-studio .object-editor{grid-template-columns:minmax(350px,420px) minmax(0,1fr);grid-template-areas:'heading heading' 'modes scope' 'engine stage' 'composer stage' 'composer gallery' 'metrics metrics';gap:14px 22px}
+.creative-studio .editor-layout>.direct-character{max-height:none;overflow:visible}
+.creative-studio .studio-composer .composer-heading{padding-bottom:14px}
+.creative-studio .studio-composer .composer-heading p{color:#b1c4bb}
+.creative-studio .studio-composer .composer-symbol{display:none}
+.creative-studio .operation-scope{padding:12px 16px;align-self:start}
+.creative-studio .operation-scope summary{min-height:20px}
+.creative-studio .operation-scope summary span{display:inline;color:#a0cfbc}
+.creative-studio .operation-scope p{color:#b3c4bd}
+.creative-studio .studio-composer select,.creative-studio .studio-composer input[type=number],.creative-studio .studio-composer textarea{font-size:14px;min-height:44px}
+.creative-studio .studio-composer .library-choice{font-size:12px}
+.creative-studio .studio-composer .parameter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(min-width:901px){
+  .creative-studio .editor-layout>.direct-engine-results{position:sticky;top:18px}
+  .creative-studio .motion-editor{grid-template-columns:minmax(350px,420px) minmax(0,1fr);gap:14px 22px}
+}
+@media(max-width:1100px) and (min-width:901px){
+  .creative-studio .object-editor,.creative-studio .motion-editor{grid-template-columns:minmax(320px,370px) minmax(0,1fr);gap:14px}
+}
+@media(max-width:900px){
+  .creative-studio .editor-layout,.creative-studio .motion-editor{display:flex;flex-direction:column;gap:10px}
+  .creative-studio .editor-layout>*,.creative-studio .motion-editor>*{width:100%;min-width:0}
+  .creative-studio .page-heading{min-height:0;margin:0 0 3px}
+  .app.creative-studio .page-heading h1{font-size:20px;line-height:1.3;margin:0;letter-spacing:-.4px}
+  .creative-studio .page-heading p{display:none}
+  .creative-studio .modes{padding:4px;margin:0}
+  .creative-studio .modes .mode{padding:8px;font-size:13px;min-height:46px}
+  .creative-studio .mode small{font-size:10px;margin-top:1px}
+  .creative-studio .operation-scope{padding:8px 13px;margin:0}
+  .creative-studio .operation-scope summary{font-size:12px}
+  .creative-studio .studio-view-switch{display:flex;gap:4px;position:sticky;top:0;z-index:20;background:#0d1517;padding:5px;border:1px solid #385147;border-radius:12px;scroll-margin-top:72px}
+  .studio-view-switch>button{display:flex;align-items:center;justify-content:center;gap:7px;flex:1;min-width:0;min-height:42px;padding:9px 8px;border:0;border-radius:8px;background:transparent;color:#b4c9c0;font-size:14px;font-weight:550}
+  .studio-view-switch>button[aria-pressed=true]{background:#294c3f;color:#ddfff1}
+  .studio-view-switch small{font-size:10px;font-weight:400;color:inherit}
+  .creative-studio .content[data-studio-view=result]>.direct-character,
+  .creative-studio .content[data-studio-view=result]>.engine-picker,
+  .creative-studio .content[data-studio-view=result] [data-studio-pane=edit]{display:none}
+  .creative-studio .content[data-studio-view=edit]>.direct-engine-results,
+  .creative-studio .content[data-studio-view=edit]>.face-summary,
+  .creative-studio .content[data-studio-view=edit]>.improve-result,
+  .creative-studio .content[data-studio-view=edit]>.upscale-1080,
+  .creative-studio .content[data-studio-view=edit]>.recent-takes,
+  .creative-studio .content[data-studio-view=edit] [data-studio-pane=result]{display:none}
+  .creative-studio .studio-composer{padding:14px}
+  .app .studio-step{margin:10px 0}
+  .app .studio-step-heading>button{min-height:62px;padding:11px 12px;gap:10px}
+  .app .studio-step-content{padding:0 12px 13px}
+  .app .engine-picker-summary{min-height:56px;padding:10px 14px}
+  .creative-studio .editor-layout>.direct-character{max-height:none;overflow:visible}
+  .creative-studio .studio-composer input:not([type=checkbox]):not([type=file]),.creative-studio .studio-composer select,.creative-studio .studio-composer textarea{font-size:16px}
+  .app.creative-studio main>header{height:42px}
+  .app.creative-studio .content{padding-top:12px}
+}
+@media(max-width:820px){
+  .creative-studio .studio-view-switch{top:62px}
+}
+
+.app .bunny-form .studio-step-content>fieldset{padding-top:14px}
+@media(min-width:901px){.creative-studio .bunny-layout{grid-template-columns:minmax(350px,420px) minmax(0,1fr);gap:22px}}
+
+.app .bunny-steps{gap:0}
+.app .bunny-submit-footer>.primary{width:auto;flex:0 0 auto;min-width:130px}
+@media(max-width:1100px){.app .bunny-submit-footer>.primary{width:100%}}

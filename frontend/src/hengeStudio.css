@@ -1,0 +1,102 @@
+/* Layout inspired by the locally installed Henge studio (MIT). */
+@import './studioFonts.css';
+:root{--studio-accent:#d6ff4b;--studio-ink:#08080c;--studio-surface:#0d0d14;--studio-raised:#1c1c27;--studio-field:#101017;--studio-text:#edebf5;--studio-muted:#8e8ba0;--studio-line:#252531;--studio-line-soft:#1f1f2a;--studio-radius:16px}
+body{background:#08080c}
+.app.henge-studio .sidebar{flex-direction:row;justify-content:flex-start}
+.app.henge-studio .sidebar .studio-nav{flex-direction:row;width:auto;flex:0 1 auto}
+.app.henge-studio .hg-stage{max-height:560px}
+.app.henge-studio{display:block;min-height:100vh;background:#08080c;color:#edebf5;font-family:Geist,system-ui,sans-serif;font-size:14px}
+.app.henge-studio .sidebar{position:relative;inset:auto;display:flex;align-items:center;gap:28px;width:100%;height:auto;min-height:74px;padding:14px 28px;border:0;border-bottom:1px solid #1f1f2a;background:#0c0c12;box-sizing:border-box}
+.app.henge-studio .sidebar .brand{display:flex;align-items:center;gap:10px;padding:0;margin:0;flex-shrink:0}
+.app.henge-studio .sidebar .brand>span:last-child{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:19px;font-weight:800;letter-spacing:-.6px}
+.app.henge-studio .sidebar .brand-mark{width:36px;height:36px;background:#d6ff4b;color:#11150a}
+.app.henge-studio .sidebar :is(.workspace,.nav-label,.sidebar-bottom){display:none}
+.app.henge-studio .studio-nav{display:flex;align-items:center;gap:3px;border:1px solid #23232e;border-radius:11px;padding:4px;margin:0;overflow-x:auto}
+.app.henge-studio .studio-nav>button{display:flex;flex-direction:row;gap:8px;align-items:center;width:auto;min-height:36px;padding:8px 13px;margin:0;border-radius:8px;font-size:12px;color:#8e8ba0;white-space:nowrap}
+.app.henge-studio .studio-nav>button.active{background:#20202b;color:#edebf5;box-shadow:none}
+.app.henge-studio .studio-nav-icon{display:flex;width:16px;height:16px}.app.henge-studio .studio-nav-icon svg{width:16px;height:16px}
+.app.henge-studio .studio-nav-label{display:block}.app.henge-studio .studio-nav-count{position:static;margin-left:4px}
+.app.henge-studio main{margin:0;width:100%;min-width:0}
+.app.henge-studio main>header{height:42px;min-height:42px;padding:0 28px;border-color:#191921;background:transparent;font-size:10px;letter-spacing:.03em}
+.app.henge-studio main>header .avatar{display:none}.app.henge-studio main>header .badge{border:0;font-size:9px;letter-spacing:.08em}
+.app.henge-studio.creative-studio .content{display:block!important;max-width:1600px;margin:auto;padding:16px 28px 60px;box-sizing:border-box}
+.hg-workspace{display:grid;grid-template-columns:300px minmax(0,1fr);gap:22px;align-items:start;min-width:0}
+.hg-controls,.hg-canvas-column{min-width:0;display:flex;flex-direction:column;gap:14px}
+.hg-outside,.hg-outside>.hg-controls{display:contents}
+.hg-create-heading{padding:0 2px 5px}.hg-create-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.hg-create-top>span,.hg-canvas-toolbar small,.hg-stage-message>span,.hg-stage-corner{font-family:'Geist Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;font-size:9px}
+.hg-create-top>span{color:#d6ff4b}.app.henge-studio .hg-new{min-height:32px;padding:5px 11px;border:1px solid #272732;border-radius:9px;background:#0f0f16;color:#edebf5;font-size:11px}
+.app.henge-studio .hg-create-heading h1{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:26px;line-height:1.08;letter-spacing:-.8px;margin:10px 0 0}
+.hg-create-heading h1 span{display:block;color:#747083}
+.app.henge-studio .hg-controls>.page-heading{display:none}.app.henge-studio .hg-title-slot .page-heading:not(.take-heading){display:none}
+.app.henge-studio .hg-title-slot .take-heading{padding:0;margin:0;min-height:0;display:flex;gap:12px;align-items:center;justify-content:space-between}
+.app.henge-studio .hg-title-slot h1{font-size:17px;overflow-wrap:anywhere}.app.henge-studio .hg-title-slot p{font-size:11px;margin:3px 0}.hg-title-slot:empty{display:none}
+.app.henge-studio .hg-workspace .studio-toolbar{display:flex;flex-direction:column;align-items:stretch;gap:12px;width:auto;padding:0;border:0;background:none;min-width:0}
+.app.henge-studio .hg-workspace .modes{display:flex;flex-direction:column;gap:6px;padding:13px;border:1px solid #22222e;border-radius:16px;background:linear-gradient(145deg,#111119,#0c0c12);width:auto}
+.hg-workspace .modes:before{content:'MODO';font:10px 'Geist Mono',monospace;color:#8e8ba0;letter-spacing:.1em;padding:0 3px 5px}
+.app.henge-studio .hg-workspace .modes .mode{position:relative;display:flex;align-items:center;justify-content:flex-start;gap:10px;min-height:57px;padding:10px;border:1px solid #242430;border-radius:10px;color:#aaa7b7;background:#101017;text-align:left;font-size:12px;box-shadow:none}
+.hg-mode-icon{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:#1d192b;color:#a68bfa;flex-shrink:0}
+.hg-mode-copy{display:grid;gap:3px}.hg-mode-copy strong{font-weight:650}.hg-mode-copy small{font-size:10px;color:#777486}
+.app.henge-studio .hg-workspace .modes .mode.active{background:linear-gradient(130deg,#d6ff4b1d,#d6ff4b05);border-color:#d6ff4b65;box-shadow:inset 0 -2px #d6ff4b;color:#edebf5}
+.hg-workspace .modes .mode.active .hg-mode-icon{background:#d6ff4b;color:#17200b;box-shadow:0 4px 14px #d6ff4b20}
+.app.henge-studio .hg-workspace .studio-tools{align-self:stretch}.app.henge-studio .hg-workspace .engine-picker{border:1px solid #242430;border-radius:13px;background:#0d0d14;width:100%;margin:0}
+.app.henge-studio .hg-workspace .engine-picker-summary{min-height:58px;padding:12px}.app.henge-studio .hg-workspace .engine-picker-summary strong{font-size:12px}.app.henge-studio .hg-workspace .engine-picker-action{font-size:10px;color:#d6ff4b}
+.app.henge-studio .hg-workspace .engine-picker-options{display:grid;gap:6px}.app.henge-studio .hg-workspace .engine-picker-options[hidden]{display:none}.app.henge-studio .hg-workspace .engine-picker-options button{font-size:12px;min-height:48px;text-align:left;display:grid;gap:4px}.app.henge-studio .hg-workspace .engine-picker-options button small{font-size:10px}.app.henge-studio .hg-workspace .engine-picker-options button[aria-pressed=true]{border-color:#d6ff4b70;background:#d6ff4b0b}
+.app.henge-studio .hg-controls :is(.unified-method-layout,.bunny-layout,.motion-methods,.motion-studio,.pika-studio){display:block!important;grid-template-columns:none;padding:0;border:0;background:none;min-width:0}
+.app.henge-studio .hg-controls :is(.bunny-form,.studio-composer,.alisson-form){padding:0!important;border:0;background:none;box-shadow:none;border-radius:0;max-width:none;max-height:none;overflow:visible}
+.app.henge-studio .hg-controls :is(.composer-heading,.bunny-intro,.bunny-form>.panel-title){display:none}
+.app.henge-studio .hg-workspace .studio-step{border:1px solid #20202b;border-radius:16px;background:#0d0d14;margin:0 0 14px;overflow:hidden}
+.app.henge-studio .hg-workspace .studio-step-heading>button{padding:15px 14px;min-height:54px;gap:9px;background:none}
+.app.henge-studio .hg-workspace .studio-step-number,.app.henge-studio .hg-workspace .studio-step.is-open .studio-step-number{font:10px 'Geist Mono',monospace;background:none;color:#d6ff4b;width:auto;height:auto;border-radius:0}
+.app.henge-studio .hg-workspace .studio-step-title strong{font-size:13px}.app.henge-studio .hg-workspace .studio-step-title small{font-size:10px;color:#827f91;line-height:1.5;max-width:215px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.app.henge-studio .hg-workspace .studio-step-content{padding:0 14px 15px;border:0}
+.app.henge-studio .hg-controls [data-studio-section=source] video[src^='/api/assets']{display:none}
+.app.henge-studio .hg-workspace :is(.upload-tile,.bunny-upload-tile){padding:24px 10px;min-height:126px;background:#0b0b12;border:1px dashed #292936;border-radius:11px;text-align:center}
+.app.henge-studio .hg-workspace :is(.upload-tile,.bunny-upload-tile) strong{font-size:12px}.app.henge-studio .hg-workspace :is(.upload-tile,.bunny-upload-tile) small{font-size:10px}.app.henge-studio .hg-workspace .tile-icon{color:#d6ff4b;font-size:23px}
+.app.henge-studio .hg-workspace :is(.parameter-grid,.ninja-grid){grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.app.henge-studio .hg-workspace :is(label,.library-choice){font-size:12px;color:#aaa7b7;line-height:1.6}
+.app.henge-studio .hg-workspace :is(input:not([type=checkbox]):not([type=file]):not([type=radio]):not([type=range]),select,textarea){background:#101017;color:#edebf5;border:1px solid #292936;border-radius:9px;font-size:12px;min-height:39px;width:100%;box-sizing:border-box;padding:9px 11px}
+.app.henge-studio .hg-workspace textarea{line-height:1.7;resize:vertical;min-height:120px}.app.henge-studio .hg-workspace :is(input,textarea)::placeholder{color:#747083}
+.app.henge-studio .hg-workspace :is(.composer-hint,.bunny-help,.method-info,.editor-status){font-size:11px!important;color:#8e8ba0;line-height:1.6}
+.app.henge-studio .hg-workspace .primary{background:#d6ff4b;color:#151a0a;border:1px solid #d6ff4b;border-radius:10px;min-height:42px;font-size:12px;font-weight:650;padding:10px 17px}
+.app.henge-studio .hg-workspace .primary:disabled{background:#252530;border-color:#292934;color:#797586;opacity:.75}
+.app.henge-studio .hg-workspace .secondary{border-color:#30303c;color:#c6c2d2;background:transparent;font-size:11px;min-height:38px;padding:9px 12px}
+.app.henge-studio .hg-workspace .primary:hover:not(:disabled){background:#e2ff86;color:#11160b}.app.henge-studio .hg-workspace :is(.advanced-controls,.editor-trial){border:1px solid #23232f;background:#0d0d14;border-radius:14px;padding:13px;margin:0 0 14px}
+.hg-canvas-toolbar{min-height:24px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;color:#d8d5e2;font-size:12px}
+.hg-canvas-toolbar>span{display:flex;gap:9px;align-items:center}.hg-canvas-toolbar i{width:6px;height:6px;background:#d6ff4b;border-radius:50%;box-shadow:0 0 12px #d6ff4b80}.hg-canvas-toolbar small{color:#787587;font-size:8px}
+.hg-stage{position:relative;display:grid;place-items:center;min-height:450px;aspect-ratio:1.35;border:1px solid #20202b;border-radius:20px;overflow:hidden;background:radial-gradient(ellipse at 15% 25%,#758e231b,transparent 57%),radial-gradient(ellipse at 89% 89%,#493ba52a,transparent 62%),#0c0c12}
+.hg-stage:after{content:'';position:absolute;top:29%;right:18%;width:5px;height:5px;background:#d6ff4b;border-radius:50%;box-shadow:0 0 14px #d6ff4b80;pointer-events:none}.hg-stage.has-source:after{display:none}
+.hg-stage-message{text-align:center;padding:30px;max-width:540px}.hg-stage-message>span{color:#d6ff4b;font-size:9px}
+.app.henge-studio .hg-stage-message h2{font:800 40px/1.05 'Bricolage Grotesque',sans-serif;letter-spacing:-1.5px;margin:23px 0 18px}.hg-stage-message h2 em{display:block;font-style:normal;color:#747083}
+.hg-stage-message p{font-size:12px;color:#8e8ba0;line-height:1.7}.app.henge-studio .hg-stage-message button{display:inline-flex;align-items:center;gap:10px;border:1px solid #282834;background:#0a0a11;color:#edebf5;padding:13px 18px;margin-top:17px;border-radius:12px;font-size:12px;font-weight:600;min-height:45px}.hg-stage-message button b{font-size:20px;font-weight:400;color:#d6ff4b}
+.hg-stage-corner{position:absolute;bottom:17px;left:18px;color:#656173;font-size:8px;pointer-events:none}
+.hg-stage video,.hg-stage>img{display:block;max-width:100%;width:100%;height:100%;max-height:650px;object-fit:contain;background:#09090e}.hg-stage.has-source{aspect-ratio:auto;background:#09090e}.hg-stage.has-source .hg-stage-corner{display:none}
+.hg-direction-card{border:1px solid #20202b;border-radius:17px;background:#0d0d14;overflow:hidden}.hg-direction-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:18px 20px;border-bottom:1px solid #1c1c27}
+.app.henge-studio .hg-direction-heading h2{font-size:13px;display:flex;gap:10px;align-items:center;margin:0}.hg-direction-heading h2>span{color:#d6ff4b;font-size:20px}.hg-qwen-badge{font-size:10px;background:#1c1c27;color:#aaa7b7;padding:7px 10px;border-radius:7px}
+.app.henge-studio .hg-direction-slot .studio-step{border:0;background:none;border-radius:0;margin:0}.hg-direction-slot .studio-step-heading{display:none}.app.henge-studio .hg-direction-slot .studio-step-content{padding:20px}.app.henge-studio .hg-direction-slot .studio-step-content[hidden]{display:block}.hg-direction-slot:empty:before{content:'Qwen prepara las indicaciones a partir de tu vídeo y tus referencias.';display:block;padding:24px 20px;color:#8e8ba0;font-size:12px}
+.app.henge-studio .hg-actions-slot :is(.bunny-submit-footer,.composer-submit){display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:16px 20px;margin:0;border-top:1px solid #1f1f2a;background:none;border-radius:0}
+.hg-actions-slot>.hg-slot>button{margin:16px 20px;float:right}.hg-actions-slot:after{display:block;content:'';clear:both}.hg-direction-note{padding:16px 20px;margin:0;border-top:1px solid #1f1f2a;font-size:11px;color:#8e8ba0;line-height:1.6}
+.app.henge-studio .hg-slot{border:0;padding:0;margin:0;min-width:0;display:block}.app.henge-studio .hg-slot[hidden],.hg-slot-marker{display:none!important}
+.app.henge-studio .hg-workspace [data-studio-pane]{display:block!important}.app.henge-studio .hg-workspace [hidden]{display:none!important}
+.app.henge-studio .hg-workspace .studio-view-switch{display:none}
+.app.henge-studio .hg-result-slot :is(.bunny-result,.pika-result,.direct-engine-results){display:block!important;width:100%;margin:0;position:static;min-width:0;max-width:none;grid-column:auto;border-color:#20202b;border-radius:18px;background:#0d0d14}
+.app.henge-studio .hg-result-slot .result-player-video{max-height:650px;object-fit:contain}.hg-result-slot:empty,.hg-sequence-slot:empty,.hg-recent-slot:empty{display:none}
+.app.henge-studio .hg-assistant-toggle{position:fixed;bottom:22px;right:24px;z-index:50;display:flex;gap:9px;align-items:center;background:#111217;color:#d6ff4b;border:1px solid #d6ff4b65;border-radius:30px;padding:13px 19px;font-size:12px;box-shadow:0 8px 35px #0008}
+.hg-assistant-toggle.needs-reply{background:#d6ff4b!important;color:#131809!important}
+.hg-assistant-drawer{position:fixed;z-index:49;right:24px;bottom:80px;width:min(440px,calc(100vw - 32px));max-height:calc(100dvh - 130px);overflow:auto;background:#0d0d14;border:1px solid #30303d;box-shadow:0 15px 60px #0009;border-radius:18px;padding:18px;box-sizing:border-box}
+.hg-assistant-header{display:flex;justify-content:space-between;align-items:center;font-size:12px}.hg-assistant-header button{background:transparent;color:#aaa7b7;font-size:24px;border:0;padding:5px 10px}.app.henge-studio .hg-assistant-drawer .qwen-director{border:0;background:transparent;padding:12px 0;margin:0}.hg-assistant-drawer .qwen-director textarea{width:100%;font-size:14px}.hg-assistant-drawer[hidden]{display:none!important}
+.hg-new-dialog{background:#111119;color:#edebf5;border:1px solid #32323f;border-radius:20px;padding:28px;max-width:430px;width:calc(100vw - 48px);box-sizing:border-box;box-shadow:0 24px 80px #0009}.hg-new-dialog::backdrop{background:#000b;backdrop-filter:blur(6px)}.hg-dialog-symbol{color:#d6ff4b;font-size:28px}.hg-new-dialog h2{font:700 25px 'Bricolage Grotesque',sans-serif;margin:16px 0}.hg-new-dialog p{color:#a6a2b5;line-height:1.7;font-size:13px}.hg-new-dialog>div{display:flex;justify-content:flex-end;gap:10px;margin-top:24px}.hg-new-dialog button{min-height:44px}
+.app.henge-studio .hg-bottom-slot .queue-strip{margin:0;padding:14px;background:#0d0d14;border-color:#20202b}.app.henge-studio .hg-bottom-slot footer{font-size:10px;padding:16px 0 0;margin:0}.app.henge-studio .hg-controls .draft-save-status{font-size:10px;padding:0 3px}
+@media(min-width:1500px){.hg-workspace{grid-template-columns:330px minmax(0,1fr);gap:26px}.hg-stage{min-height:570px}}
+@media(max-width:1050px){.hg-workspace{grid-template-columns:265px minmax(0,1fr);gap:18px}.app.henge-studio.creative-studio .content{padding:16px 20px 60px}.app.henge-studio .hg-stage-message h2{font-size:33px}.hg-stage{min-height:420px}}
+@media(max-width:700px){.app.henge-studio .sidebar{padding:12px 16px;flex-wrap:wrap;gap:12px;position:static;transform:none}.app.henge-studio .studio-nav{width:100%;justify-content:space-between}.app.henge-studio .studio-nav>button{padding:8px 9px;font-size:11px;gap:5px}.app.henge-studio main>header{padding:0 16px;height:34px}.app.henge-studio main>header>div:first-child{font-size:9px}.app.henge-studio.creative-studio .content{padding:12px 16px 85px}.hg-workspace{display:flex;flex-direction:column;gap:20px}.hg-controls,.hg-canvas-column{width:100%}.app.henge-studio .hg-workspace .modes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.hg-workspace .modes:before{grid-column:1/-1}.app.henge-studio .hg-workspace .modes .mode{display:flex;flex-direction:column;align-items:flex-start;gap:7px;padding:9px;font-size:10px}.hg-mode-copy small{display:none}.hg-mode-icon{width:28px;height:28px}.hg-stage{min-height:360px;aspect-ratio:auto}.app.henge-studio .hg-stage-message h2{font-size:33px}.app.henge-studio .hg-workspace :is(input:not([type=checkbox]):not([type=file]):not([type=radio]):not([type=range]),select,textarea){font-size:16px;min-height:44px}.hg-canvas-toolbar>small{font-size:7px}.hg-assistant-drawer{right:16px}.app.henge-studio .hg-assistant-toggle{bottom:16px;right:16px}.hg-direction-heading{padding:15px}.app.henge-studio .hg-direction-slot .studio-step-content{padding:15px}.hg-qwen-badge{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.app.henge-studio *{scroll-behavior:auto!important;transition:none!important}}
+.app.henge-studio .hg-workspace .pika-upload{display:grid;place-items:center;min-height:100px;border:1px dashed #30303d;background:#0b0b12;cursor:pointer}
+.app.henge-studio .hg-workspace .pika-file{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}
+.app.henge-studio .hg-workspace .pika-upload:has(+input:focus-visible){outline:2px solid #d6ff4b;outline-offset:3px}
+.app.henge-studio .hg-workspace input[type=file]:not(.pika-file){max-width:100%;font-size:11px}
+.app.henge-studio .hg-workspace input[type=file]::file-selector-button{background:#17171f;color:#edebf5;border:1px solid #30303c;border-radius:8px;padding:10px;margin-right:8px;cursor:pointer}
+.app.henge-studio .hg-result-slot .pika-result{padding:18px}.app.henge-studio .hg-result-slot .pika-result .panel-title{display:block;padding:0;margin-bottom:16px}.app.henge-studio .hg-result-slot .pika-result .panel-title h2{margin-bottom:12px}
+/* The tools now live in the left column; the old right-aligned 360px menu escaped it. */
+.app.henge-studio .hg-workspace .studio-tools-panel{left:0;right:auto;width:100%;min-width:0;box-sizing:border-box;overflow-wrap:anywhere}
+.app.henge-studio .hg-workspace .studio-tools-panel :is(select,input,button){min-width:0;max-width:100%}
+@media(max-width:700px){.app.henge-studio .sidebar .studio-nav{width:100%;flex:1 1 100%;gap:2px}.app.henge-studio .studio-nav>button{gap:4px;padding:8px 6px}.app.henge-studio .hg-workspace .modes .mode small{display:none}.app.henge-studio .hg-mode-copy{min-width:0}.app.henge-studio .hg-new-dialog>div{flex-wrap:wrap}.app.henge-studio .hg-new-dialog button{width:100%}}

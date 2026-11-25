@@ -1,0 +1,10 @@
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+import './style.css';
+import GuidedComposition from './GuidedComposition';
+import IdentityAnchor from './IdentityAnchor';
+const demo={enabled:false,candidates:[{id:'pose-head-20',name:'Detalle H3 aprobado · toma completa',head_url:'/api/identity-tests/pose-head-20/video',frames:107}]};
+const parent={id:'bb2f5a0d-88a7-467d-ac7b-e003be2515da',parameters:{face_reference_id:'39fa9482-313d-4791-a669-8988f13f4b11',reference_id:'7e04ea1d-5eca-400a-8926-aab83341ab3b'}};
+const assets=[{id:parent.parameters.face_reference_id,kind:'image',name:'Foto real del rostro'},{id:parent.parameters.reference_id,kind:'image',name:'Hoja de personaje'}];
+const heads={enabled:false,sources:[{id:'demo',name:'Escena de prueba conservada',width:960,height:544,duration:4.458333,url:'/api/identity-tests/identity-anchor-06/video'}]};
+createRoot(document.getElementById('root')).render(<main style={{maxWidth:760,margin:'40px auto',padding:20}}><p className="tiny">GEN STUDIO · VISTA PREVIA</p><h1>Detalle facial y composición estable</h1><p>Interfaz preparada para revisión. Los botones están desactivados en esta vista previa.</p><IdentityAnchor job={parent} mode="guided" assets={assets} available={false} preview={heads}/><GuidedComposition job={parent} preview={demo}/></main>);

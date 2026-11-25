@@ -1,0 +1,319 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "LoraLoaderModelOnly",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "lora_name": "h3_character_swap_pro4500_1000.safetensors",
+      "strength_model": 1.0
+    }
+  },
+  "3": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax",
+      "device": "default"
+    }
+  },
+  "4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    }
+  },
+  "5": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "6": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "reference_isolated.png"
+    }
+  },
+  "7": {
+    "class_type": "VHS_LoadVideoFFmpegPath",
+    "inputs": {
+      "video": "source.mp4",
+      "force_rate": 24,
+      "custom_width": 0,
+      "custom_height": 0,
+      "frame_load_cap": 107,
+      "start_time": 0,
+      "format": "None"
+    }
+  },
+  "8": {
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "inputs": {
+      "clip": [
+        "3",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ],
+      "audio_vae": [
+        "5",
+        0
+      ],
+      "ref_images.ref_image_0": [
+        "6",
+        0
+      ],
+      "ref_videos.ref_video_0": [
+        "7",
+        0
+      ],
+      "prompt": "Replace the selected person in <Video 1> with the character in <Picture 1>. Preserve the scene, motion and other people.",
+      "width": 960,
+      "height": 544,
+      "length": 107,
+      "ref_image_size": "match"
+    }
+  },
+  "9": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "2",
+        0
+      ],
+      "conditioning": [
+        "8",
+        0
+      ]
+    }
+  },
+  "10": {
+    "class_type": "BasicScheduler",
+    "inputs": {
+      "model": [
+        "2",
+        0
+      ],
+      "scheduler": "beta",
+      "steps": 20,
+      "denoise": 1.0
+    }
+  },
+  "11": {
+    "class_type": "KSamplerSelect",
+    "inputs": {
+      "sampler_name": "res_multistep"
+    }
+  },
+  "12": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 314159
+    }
+  },
+  "13": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "12",
+        0
+      ],
+      "guider": [
+        "9",
+        0
+      ],
+      "sampler": [
+        "11",
+        0
+      ],
+      "sigmas": [
+        "10",
+        0
+      ],
+      "latent_image": [
+        "27",
+        0
+      ]
+    }
+  },
+  "14": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "13",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "15": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "images": [
+        "14",
+        0
+      ],
+      "fps": 24
+    }
+  },
+  "16": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": [
+        "15",
+        0
+      ],
+      "filename_prefix": "gen-studio/replacement",
+      "format": "mp4",
+      "codec": "h264"
+    }
+  },
+  "17": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "sam3.1_multiplex_fp16.safetensors"
+    }
+  },
+  "18": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "17",
+        1
+      ],
+      "text": "selected person"
+    }
+  },
+  "19": {
+    "class_type": "SAM3_VideoTrack",
+    "inputs": {
+      "images": [
+        "7",
+        0
+      ],
+      "model": [
+        "17",
+        0
+      ],
+      "conditioning": [
+        "18",
+        0
+      ],
+      "detection_threshold": 0.3,
+      "max_objects": 1,
+      "detect_interval": 12
+    }
+  },
+  "20": {
+    "class_type": "SAM3_TrackToMask",
+    "inputs": {
+      "track_data": [
+        "19",
+        0
+      ],
+      "object_indices": ""
+    }
+  },
+  "21": {
+    "class_type": "MVEx_MaskToLatentSpace",
+    "inputs": {
+      "masks": [
+        "20",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ],
+      "compression": "auto",
+      "spatial_method": "max",
+      "temporal_method": "max",
+      "grow_spatial": 16,
+      "grow_temporal": 0,
+      "grow_temp_mode": "both"
+    }
+  },
+  "22": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": [
+        "7",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "23": {
+    "class_type": "SetLatentNoiseMask",
+    "inputs": {
+      "samples": [
+        "22",
+        0
+      ],
+      "mask": [
+        "21",
+        0
+      ]
+    }
+  },
+  "24": {
+    "class_type": "LTXVSeparateAVLatent",
+    "inputs": {
+      "av_latent": [
+        "8",
+        1
+      ]
+    }
+  },
+  "25": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 0,
+      "width": 32,
+      "height": 32
+    }
+  },
+  "26": {
+    "class_type": "SetLatentNoiseMask",
+    "inputs": {
+      "samples": [
+        "24",
+        1
+      ],
+      "mask": [
+        "25",
+        0
+      ]
+    }
+  },
+  "27": {
+    "class_type": "LTXVConcatAVLatent",
+    "inputs": {
+      "video_latent": [
+        "23",
+        0
+      ],
+      "audio_latent": [
+        "26",
+        0
+      ]
+    }
+  }
+}

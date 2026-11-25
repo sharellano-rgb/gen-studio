@@ -1,0 +1,1 @@
+"""Experimental native Viggle backend; opt-in via viggle_remake_enabled.\n\nIndependent isolated runtime, shared queue/Qwen, versioned hop17 continuity.\nFree object/background edit is not enabled by the swap checkpoint.\n"""

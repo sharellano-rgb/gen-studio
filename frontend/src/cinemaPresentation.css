@@ -1,0 +1,73 @@
+.cinema-dialog { box-sizing:border-box; width:min(1400px,calc(100% - 32px)); max-width:none; max-height:calc(100vh - 32px); max-height:calc(100dvh - 32px); margin:auto; padding:0; overflow:auto; border:1px solid #373b42; border-radius:22px; background:#111216; color:#f0f2f3; color-scheme:dark; font:15px/1.5 "Segoe UI",sans-serif; box-shadow:0 30px 120px #0009; }
+.cinema-dialog::backdrop { background:#050609dd; backdrop-filter:blur(14px); }
+.cinema-dialog * { box-sizing:border-box; }
+.cinema-dialog [hidden] { display:none!important; }
+.cinema-shell { padding:0 36px; }
+.cinema-header { position:sticky; top:0; z-index:4; height:auto; background:#111216; display:flex; align-items:center; justify-content:space-between; gap:14px; padding:19px 0; border-bottom:1px solid #303239; }
+.cinema-brand { display:flex; align-items:center; gap:12px; font-size:11px; font-weight:700; letter-spacing:1.8px; }
+.cinema-brand strong { color:#a9eedb; font-weight:600; }
+.cinema-brand-mark { display:grid; place-items:center; width:30px; height:30px; border-radius:9px; background:#a9eedb; color:#111216; font-size:20px; letter-spacing:-1px; }
+.cinema-brand-divider { padding:0 12px; color:#646b75; }
+.cinema-dialog button { min-height:44px; border:1px solid #42454e; border-radius:10px; padding:10px 16px; background:#1a1c21; color:#eef0f2; font:600 14px/1.3 "Segoe UI",sans-serif; cursor:pointer; }
+.cinema-dialog button:hover:not(:disabled) { background:#26292f; }
+.cinema-dialog button:focus-visible,.cinema-dialog a:focus-visible { outline:2px solid #91e6ce; outline-offset:4px; }
+.cinema-dialog .cinema-close { display:flex; align-items:center; gap:18px; background:transparent; border-color:transparent; font-weight:400; }
+.cinema-close span { font-size:24px; line-height:1; color:#aeb5bd; }
+.cinema-title { padding:25px 0 27px; }
+.cinema-title p { margin:0 0 7px; color:#a9eedb; font-size:11px; letter-spacing:1.8px; text-transform:uppercase; }
+.cinema-title h1 { max-width:100%; margin:0; color:#f3f2ed; font:400 clamp(25px,3.4vw,44px)/1.18 Georgia,serif; overflow-wrap:anywhere; }
+.cinema-layout { display:grid; grid-template-columns:minmax(0,1fr) 218px; gap:28px; align-items:start; }
+.cinema-screen { min-width:0; width:100%; margin:0; }
+.cinema-view-modes { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 13px; }
+.cinema-dialog .cinema-view-modes button { border-color:transparent; background:transparent; color:#aeb5bd; font-weight:400; }
+.cinema-dialog .cinema-view-modes button[aria-pressed="true"] { border-color:#41474b; background:#252b2d; color:#dff7ef; }
+.cinema-final { display:grid; place-items:center; min-height:160px; border:1px solid #303239; border-radius:14px; overflow:hidden; background:#08090c; }
+.cinema-final video { display:block; width:100%; max-height:58vh; max-height:max(180px,min(58dvh,calc(100dvh - 370px))); object-fit:contain; }
+.cinema-info { min-width:0; padding:12px 0 0 22px; border-left:1px solid #303239; }
+.cinema-eyebrow { color:#969ca5; font-size:10px; letter-spacing:1.3px; text-transform:uppercase; }
+.cinema-info h2 { margin:8px 0 11px; font-size:17px; font-weight:500; }
+.cinema-specs { display:flex; flex-wrap:wrap; gap:6px 13px; color:#aeb5bd; font-size:12px; font-variant-numeric:tabular-nums; }
+.cinema-references { margin-top:28px; }
+.cinema-references h3 { margin:0 0 13px; color:#d8dddf; font-size:12px; font-weight:500; }
+.cinema-references figure { margin:0 0 18px; }
+.cinema-references img { display:block; width:100%; height:124px; object-fit:contain; object-position:left center; border-radius:8px; background:#0b0d10; }
+.cinema-references figcaption { margin-top:8px; font-size:12px; color:#c4cacf; overflow-wrap:anywhere; }
+.cinema-references small { display:block; margin-top:3px; color:#89919b; font-size:11px; }
+.cinema-download { display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:48px; margin-top:25px; padding:12px 14px; border:1px solid #657e76; border-radius:10px; color:#b8efdf; text-decoration:none; font-size:13px; }
+.cinema-download:hover { background:#1d302b; }
+.cinema-footer { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 0; margin-top:25px; border-top:1px solid #303239; color:#89919b; font-size:10px; }
+.cinema-footer > :first-child { font-size:10px; font-weight:600; letter-spacing:2px; }
+.cinema-media-error { padding:16px; color:#ffc6bd; }
+.app button.cinema-launch { display:inline-flex; align-items:center; gap:8px; min-height:44px; margin:0; padding:9px 13px; border:1px solid #698b7e; border-radius:9px; background:#263c33; color:#e1f7ec; font-size:13px; font-weight:600; cursor:pointer; }
+.app button.cinema-launch:hover { border-color:#a9eedb; background:#314b40; }
+@media(max-width:760px){
+ .cinema-dialog { width:calc(100% - 16px); max-height:calc(100vh - 16px); max-height:calc(100dvh - 16px); border-radius:16px; }
+ .cinema-shell { padding:0 18px; }
+ .cinema-header { padding:10px 0; }
+ .cinema-brand { font-size:9px; gap:9px; letter-spacing:1.2px; }
+ .cinema-brand-divider { padding:0 6px; }
+ .cinema-dialog .cinema-close { gap:10px; padding:8px; font-size:12px; }
+ .cinema-title { padding:20px 0; }
+ .cinema-title p { font-size:9px; letter-spacing:1.2px; }
+ .cinema-layout { grid-template-columns:minmax(0,1fr); gap:25px; }
+ .cinema-info { border-left:0; border-top:1px solid #303239; padding:20px 0 0; }
+ .cinema-references { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+ .cinema-references h3 { flex:1 0 100%; margin-bottom:0; }
+ .cinema-references figure { width:calc(50% - 5px); margin:0; }
+ .cinema-references img { height:110px; }
+ .cinema-download { margin-top:20px; }
+ .cinema-footer { align-items:flex-start; font-size:9px; margin-top:20px; }
+ .cinema-footer > :last-child { max-width:55%; text-align:right; }
+ .cinema-final video { max-height:48vh; max-height:48dvh; }
+}
+
+/* Cine is discoverable before the player and directly from saved takes. */
+.app button.take-cinema { flex:none; min-width:135px; justify-content:center; align-self:center; }
+.app button.library-cinema { width:100%; justify-content:center; margin-top:12px; }
+@media(max-width:900px){
+ .app.creative-studio .take-heading { gap:12px; }
+ .app button.take-cinema { width:100%; align-self:stretch; }
+}
+
+.app.creative-studio .page-heading:not(.take-heading) { flex-wrap:wrap; gap:12px; align-items:center; }
+.app button.cinema-home { flex:none; min-width:135px; justify-content:center; }

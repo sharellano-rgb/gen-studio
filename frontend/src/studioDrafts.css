@@ -1,0 +1,18 @@
+.app .draft-shelf{grid-column:1/-1;min-width:0;border:1px solid #2a3a34;border-radius:12px;padding:12px 16px;background:#101a17}
+.app .draft-shelf summary{cursor:pointer;min-height:24px;color:#c5d8cf;font-size:13px}
+.app .draft-shelf summary span{margin-left:8px;color:#97b7a7}
+.app .draft-shelf p,.app .draft-save-status{font-size:12px;line-height:1.6;color:#9eb9ac;margin:10px 0}
+.app .draft-shelf-controls{display:flex;align-items:end;gap:12px;min-width:0}
+.app .draft-shelf-controls label{flex:1;min-width:0;font-size:12px}
+.app .draft-shelf select{display:block;width:100%;min-width:0;max-width:100%;margin-top:6px}
+.app .draft-shelf-controls button{flex:none;min-height:44px}
+.app .draft-save-error{color:#f1bf91}
+.app .draft-pending-warning{padding:12px;border:1px solid #806243;border-radius:10px;margin-bottom:14px;font-size:13px;line-height:1.6}
+.app .draft-pending-warning button{display:block;margin-top:8px;min-height:44px}
+@media(max-width:600px){.app .draft-shelf-controls{flex-direction:column;align-items:stretch}.app .draft-shelf{padding:12px}.app .draft-shelf select{font-size:13px}}
+
+@media(min-width:901px){
+ .app.creative-studio .object-editor:has(>.draft-shelf){grid-template-areas:'heading heading' 'modes scope' 'drafts drafts' 'engine stage' 'composer stage' 'composer gallery' 'metrics metrics'}
+ .app.creative-studio .motion-editor:has(>.draft-shelf){grid-template-areas:'heading heading' 'modes scope' 'drafts drafts' 'workspace workspace' 'metrics metrics'}
+ .app .object-editor>.draft-shelf,.app .motion-editor>.draft-shelf{grid-area:drafts}
+}

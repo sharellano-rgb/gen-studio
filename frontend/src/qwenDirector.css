@@ -1,0 +1,15 @@
+.qwen-director{grid-area:qwen;grid-column:1/-1;min-width:0;margin-block:16px;border:1px solid var(--border,#364b45)}
+@media(min-width:901px){
+  .creative-studio .object-editor:has(>.qwen-director){grid-template-areas:'heading heading' 'modes scope' 'qwen qwen' 'engine stage' 'composer stage' 'composer gallery' 'metrics metrics'}
+  .creative-studio .motion-editor:has(>.qwen-director){grid-template-areas:'heading heading' 'modes scope' 'qwen qwen' 'workspace workspace' 'metrics metrics'}
+}
+.qwen-director>details>summary{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;cursor:pointer;list-style:none}
+.qwen-director summary span,.qwen-director small{color:var(--muted,#a5b4ad);font-size:.85rem}
+.qwen-director p{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.55}
+.qwen-messages{max-height:420px;overflow:auto;overscroll-behavior:contain;margin-block:16px;padding:4px}
+.qwen-message{padding:12px 16px;margin-block:8px;border-radius:10px;background:rgba(120,145,135,.10)}
+.qwen-message.user{margin-left:clamp(0px,6vw,60px);background:rgba(91,159,126,.16)}
+.qwen-message p{margin:6px 0 0}.qwen-actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.qwen-director textarea{width:100%;box-sizing:border-box;resize:vertical;min-height:90px}
+.qwen-notes{font-size:.9rem}.qwen-director>details>small{display:block;margin-top:12px}
+@media(max-width:600px){.qwen-actions>button{width:100%}.qwen-message{padding:10px}.qwen-director>details>summary{display:block}.qwen-director summary span{display:block;margin-top:5px}}

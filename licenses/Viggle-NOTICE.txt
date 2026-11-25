@@ -1,0 +1,1 @@
+Native hop port based on Viggle/Viggle-Remake worker.py and worker_patches.py, revision21665fa7a1e038e0a5312fb15f37b18d0f06f117. Official code Apache-2.0. Model licensing remains separate; see original model card and LICENSE. ComfyUI MiniMax denoise_mask implements held near-clean video rows. This is a Gen Studio port, not an official Viggle Comfy hop node.

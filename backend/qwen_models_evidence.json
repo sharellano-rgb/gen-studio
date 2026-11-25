@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "models": [
+    {
+      "id": "qwen3.8:27b",
+      "name": "Qwen3.8 27B Q4_K_M (Original)",
+      "runtime": "ollama",
+      "architecture": "qwen35",
+      "quantization": "Q4_K_M",
+      "runtime_quantization_label": "Q4_K_M",
+      "context": {
+        "architecture_limit_tokens": 262144,
+        "default_tokens": 32768,
+        "validated_setting_tokens": 32768,
+        "long_session_verified": false
+      },
+      "installed_parameters": {
+        "temperature": 1,
+        "top_k": 20,
+        "top_p": 0.95,
+        "min_p": 0,
+        "presence_penalty": 0,
+        "repeat_penalty": 1,
+        "draft_num_predict": 4
+      },
+      "default_request_options": {
+        "num_ctx": 32768
+      },
+      "mtp": {
+        "configured": true,
+        "verified": false,
+        "fastmtp_verified": false
+      },
+      "verified_capabilities": {
+        "text": true,
+        "vision": true,
+        "tools": true,
+        "mtp": false,
+        "native_video": false,
+        "precise_spatial_judgment": false,
+        "automatic_continuity_quality_gate": false,
+        "workflow_parameter_recommendation": false,
+        "structured_json": false
+      },
+      "memory": {
+        "observed_peak_total_gpu_mib": 20512,
+        "observed_idle_total_gpu_mib": 336,
+        "observed_context_tokens": 32768,
+        "gpu": "RTX 4090 24 GiB",
+        "simultaneous_models_verified": false,
+        "minimum_required_vram_mib": null,
+        "measurement_note": "Observed total device usage in bounded tests, not a minimum-memory guarantee."
+      },
+      "evidence": {
+        "id": "qwen-original-ollama-0.40.18",
+        "model_digest": "aaee06c39dcf2437cde036998d960e1fc1494b8191be7cc9657d01e509097813",
+        "runtime_version": "0.40.18",
+        "completed_at": "2026-11-25T15:42:43.537516+00:00",
+        "report_sha256": "f278e54106c570d05bb1ec2956ead69c0b4c50ac8041d5be88853d7a5a39479f"
+      },
+      "limitations": [
+        "Visual output can omit or invent details; review required.",
+        "Sampled frames do not prove continuous motion or exact geometry.",
+        "Capability and memory checks do not acquire the shared GPU lease."
+      ]
+    },
+    {
+      "id": "qwen38-27b-hauhau-aggressive:latest",
+      "name": "Qwen3.8 27B Uncensored Aggressive Q4_K_P",
+      "runtime": "ollama",
+      "architecture": "qwen35",
+      "quantization": "Q4_K_P",
+      "runtime_quantization_label": "Q4_K_M",
+      "context": {
+        "architecture_limit_tokens": 262144,
+        "default_tokens": 8192,
+        "validated_setting_tokens": 24576,
+        "long_session_verified": false,
+        "setting_measurements": [
+          {
+            "num_ctx": 12288,
+            "prompt_tokens": 5939,
+            "vision_json_passed": true
+          },
+          {
+            "num_ctx": 24576,
+            "prompt_tokens": 5939,
+            "vision_json_passed": true
+          }
+        ]
+      },
+      "installed_parameters": {
+        "temperature": 1,
+        "top_k": 20,
+        "top_p": 0.95,
+        "min_p": 0,
+        "presence_penalty": 0,
+        "repeat_penalty": 1,
+        "draft_num_predict": 0,
+        "num_ctx": 8192
+      },
+      "default_request_options": {
+        "num_ctx": 8192
+      },
+      "mtp": {
+        "configured": false,
+        "verified": true,
+        "fastmtp_verified": false,
+        "gen_studio_new_work_enabled": true,
+        "profile": "aggressive-native-mtp4-v1",
+        "benchmark": {
+          "model_digest": "db02dc7adb383b3016e5d03f818a4a1e8326c7c30eb1da1c2b17ec9a2db1acf2",
+          "runtime_version": "0.40.13",
+          "report_sha256": "87948868cb9bea1729152a0b435df8d0dffd5ef5f06ff0ddabd87eacea77de28",
+          "tests_passed": 14,
+          "think": false,
+          "validated_context_tokens": [
+            8192,
+            12288,
+            24576
+          ],
+          "acceptance_rate_measured": false
+        }
+      },
+      "verified_capabilities": {
+        "text": true,
+        "vision": true,
+        "tools": true,
+        "mtp": true,
+        "native_video": false,
+        "precise_spatial_judgment": false,
+        "automatic_continuity_quality_gate": false,
+        "workflow_parameter_recommendation": false,
+        "structured_json": true
+      },
+      "memory": {
+        "observed_peak_total_gpu_mib": 21014,
+        "observed_idle_total_gpu_mib": 336,
+        "observed_context_tokens": 24576,
+        "gpu": "RTX 4090 24 GiB",
+        "simultaneous_models_verified": false,
+        "minimum_required_vram_mib": null,
+        "measurement_note": "Observed total device usage in bounded tests, not a minimum-memory guarantee."
+      },
+      "evidence": {
+        "id": "qwen-aggressive-ollama-0.40.18",
+        "model_digest": "db02dc7adb383b3016e5d03f818a4a1e8326c7c30eb1da1c2b17ec9a2db1acf2",
+        "runtime_version": "0.40.18",
+        "completed_at": "2026-11-25T15:47:51.943543+00:00",
+        "report_sha256": "2c88b0d58208ef70c6d3c7e562e2f509ac27013264e274f98d30318e9491e331"
+      },
+      "limitations": [
+        "Visual output can omit or invent details; review required.",
+        "Sampled frames do not prove continuous motion or exact geometry.",
+        "Capability and memory checks do not acquire the shared GPU lease.",
+        "Context settings 12288/24576 passed bounded 5939-token image+JSON tests; full-window quality and long sessions remain unverified.",
+        "Native MTP4 applies only to new GEN STUDIO version-2 work, think=false. Historical Aggressive work stays MTP0; installed model and OpenCode remain unchanged. Two samples per benchmark condition; not a general speed/quality guarantee."
+      ]
+    }
+  ]
+}

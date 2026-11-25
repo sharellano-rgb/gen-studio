@@ -1,0 +1,45 @@
+/* Let the footage lead. Controls and review metadata follow the player. */
+.app .preview:has(> .h3-result-review) > .panel-title {
+  padding: 14px 16px; margin: 0; min-height: 48px; border-bottom: 0;
+}
+.app .preview:has(> .h3-result-review) > .panel-title h2 { font-size: 17px; }
+.app .h3-result-review { padding: 0 16px 16px; }
+.app .bunny-result.has-video-result { padding: 0 16px 16px; }
+.app .bunny-result.has-video-result > h2 { margin: 0; padding: 14px 0; font-size: 17px; }
+.app :is(.h3-result-review, .bunny-result-review) > .result-player-video {
+  display: block; width: calc(100% + 32px); max-width: none; height: auto; max-height: min(65vh, 720px);
+  margin: 0 -16px; object-fit: contain; background: #090a0d; border-radius: 0;
+}
+/* Embedded results already inherit the enclosing form's padding. */
+.app :is(.alisson-result, .ninja-review) > .h3-result-review > .result-player-video {
+  width: 100%; margin: 0; border-radius: 10px;
+}
+.app .result-player-toolbar {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center;
+  gap: 10px; margin: 14px 0 10px; min-width: 0;
+}
+.app .result-player-toolbar > :is(.h3-result-modes, .bunny-result-modes) { margin: 0; min-width: 0; }
+.app .result-player-toolbar :is(.h3-result-modes, .bunny-result-modes) > button {
+  min-height: 44px; padding: 8px; font-size: 13px;
+}
+.app .result-player-toolbar > :is(.h3-result-download, .bunny-result-download) {
+  margin: 0; min-height: 46px; padding: 10px 14px; font-size: 13px; white-space: nowrap;
+}
+.app :is(.h3-result-summary, .bunny-result-summary) { margin: 0 0 16px; gap: 6px 12px; font-size: 12px; }
+.app .h3-result-ready { padding: 3px 8px; }
+.app :is(.h3-result-review, .bunny-result-review) .comparison-window {
+  aspect-ratio: var(--comparison-aspect, 16 / 9); max-height: min(55vh, 480px); border-radius: 8px;
+}
+.app :is(.h3-result-review, .bunny-result-review) .comparison-pair { align-items: start; }
+.app :is(.h3-result-review, .bunny-result-review) .comparison-pair figcaption { margin-bottom: 8px; }
+/* Source previews use the video's proportions instead of a fixed-height box. */
+.app.creative-studio .preview .video-stage { margin: 0 16px; border: 0; border-radius: 10px; }
+.app.creative-studio .preview .video-stage > video { height: auto; max-height: min(65vh, 720px); object-fit: contain; }
+@media (max-width: 1100px) {
+  .app .result-player-toolbar { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 900px) {
+  .app :is(.h3-result-review, .bunny-result-review) > .result-player-video { max-height: 60vh; max-height: 60svh; }
+  .app :is(.h3-result-review, .bunny-result-review) .comparison-window { max-height: 50vh; max-height: 50svh; }
+  .app .result-player-toolbar { gap: 8px; }
+}

@@ -1,0 +1,61 @@
+.swap-stage, .swap-guide:not(.is-guided) { display: contents; }
+.swap-stage[hidden] { display: none !important; }
+.swap-guide.is-guided {
+  min-width: 0;
+  padding: clamp(14px, 2vw, 22px);
+  border: 1px solid #343441;
+  border-radius: 16px;
+  background: #111118;
+}
+.swap-guide-bar, .swap-guide-footer nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.swap-guide-bar > span { font-size: .78rem; font-weight: 650; color: #dbf88a; }
+.swap-guide-bar button, .swap-guide-summary button {
+  min-height: 38px; border: 0; background: transparent; color: #dfdfeb;
+  padding: 5px 8px; text-decoration: underline; text-underline-offset: 3px;
+}
+.swap-guide-heading progress {
+  display: block; width: 100%; height: 4px; margin: 6px 0 18px;
+  accent-color: #d6ff4b; border: 0; border-radius: 4px; background: #333340;
+}
+.swap-guide-heading progress::-webkit-progress-bar { background: #333340; border-radius: 4px; }
+.swap-guide-heading progress::-webkit-progress-value { background: #d6ff4b; border-radius: 4px; }
+.swap-guide-heading h2 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); line-height: 1.15; margin: 0; }
+.swap-guide-heading p, .swap-guide-footer p { font-size: .86rem; line-height: 1.5; color: #c1bfce; margin: 7px 0 15px; }
+.app.henge-studio .hg-workspace .swap-guide.is-guided .studio-step {
+  border: 0; background: transparent; border-radius: 0; margin: 0; overflow: visible;
+}
+.swap-guide.is-guided .studio-step-heading { display: none; }
+.app.henge-studio .hg-workspace .swap-guide.is-guided .studio-step-content { padding: 0; }
+.swap-guide-footer { border-top: 1px solid #30303d; margin-top: 16px; padding-top: 12px; }
+.swap-guide-footer .primary { margin-left: auto; }
+.swap-guide-footer nav button { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; }
+.swap-guide-summary { margin: 0 0 14px; }
+.swap-guide-summary > div {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center;
+  padding: 9px 0; border-bottom: 1px solid #2e2e39;
+}
+.swap-guide-summary dt { color: #aaa8b8; font-size: .78rem; }
+.swap-guide-summary dd { grid-column: 1; margin: 3px 0 0; overflow-wrap: anywhere; }
+.swap-guide-summary dd span { display: block; }
+.swap-guide-summary button { grid-column: 2; grid-row: 1 / 3; }
+.swap-guide-original { margin: 0 0 14px; }
+.swap-guide-original summary { padding: 7px 0; font-size: .85rem; cursor: pointer; }
+.swap-guide-original video { width: 100%; max-height: 45vh; margin-top: 6px; object-fit: contain; background: #09090e; }
+.hg-workspace:has(.swap-guide.is-guided) .hg-direction-card { display: none; }
+@media (min-width: 701px) {
+  .app.henge-studio .hg-workspace:has(.swap-guide.is-guided) { grid-template-columns: minmax(310px, .85fr) minmax(0, 1.3fr); }
+  .hg-workspace:has(.swap-guide.is-guided) > .hg-canvas-column { position: sticky; top: 12px; }
+}
+@media (max-width: 700px) {
+  .app.henge-studio .hg-controls .swap-guide.is-guided [data-studio-section=source] video[src] {
+    display: block; width: 100%; max-height: 35vh; object-fit: contain;
+  }
+  .hg-workspace:has(.swap-guide.is-guided) :is(.hg-stage,.hg-canvas-toolbar) { display: none; }
+  .app.henge-studio .hg-workspace:has(.swap-guide.is-guided) > .hg-assistant-toggle { position: static; align-self: flex-end; }
+}

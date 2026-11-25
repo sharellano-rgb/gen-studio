@@ -1,0 +1,19 @@
+:root { color-scheme: dark; font-family: system-ui, sans-serif; background: #101114; color: #eceef0; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 1000px; margin: auto; padding: 24px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 12px; border-bottom: 1px solid #303238; padding-bottom: 18px; }
+header a { color: #c2ff81; font-weight: 750; text-decoration: none; }
+header span, p { color: #a9adb6; font-size: 14px; line-height: 1.6; }
+h1 { font-size: 26px; font-weight: 600; }
+nav, .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+[hidden] { display: none !important; }
+button, .actions a { font: inherit; font-size: 14px; padding: 11px 16px; border: 1px solid #43474e; border-radius: 8px; background: #202329; color: #e6e8ed; cursor: pointer; text-decoration: none; }
+button[aria-pressed="true"] { border-color: #c2ff81; color: #c2ff81; }
+#play { background: #c2ff81; border-color: #c2ff81; color: #18210f; font-weight: 650; }
+button:disabled { opacity: .5; cursor: default; }
+button:focus-visible, a:focus-visible { outline: 2px solid #c2ff81; outline-offset: 3px; }
+video { display: block; width: 100%; height: min(65vh, 620px); background: #08090b; object-fit: contain; border: 1px solid #303238; border-radius: 10px; }
+#status { min-height: 24px; color: #c5d5b9; }
+#description { font-size: 13px; }
+@media (max-width: 600px) { main { padding: 16px; } h1 { font-size: 23px; } video { height: 56vh; } .actions a, .actions button { flex: 1 1 auto; text-align: center; } }

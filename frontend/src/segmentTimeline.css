@@ -1,0 +1,29 @@
+.app .segment-timeline{min-width:0;margin:18px 0;border:1px solid #3a5549;border-radius:12px;padding:14px;background:#101e19;scroll-margin-top:80px}
+.app .segment-timeline-heading{display:flex;gap:8px 16px;flex-wrap:wrap;align-items:baseline;justify-content:space-between}
+.app .segment-timeline-heading h4{font-size:15px;margin:0}
+.app .segment-timeline-heading>span,.app .segment-timeline>p{color:#aec5b8;font-size:12px;line-height:1.6}
+.app .segment-rail{display:flex;position:relative;height:14px;border-radius:4px;overflow:hidden;background:#26372f;margin-top:14px}
+.app .segment-rail-block{box-sizing:border-box;border-right:2px solid #101e19;background:#40574a;height:100%}
+.app .segment-rail-block.completed{background:#3c7961}.app .segment-rail-block.error{background:#b77855}.app .segment-rail-block.active{background:#5f8f9b}.app .segment-rail-block.original{background:#6a726c}
+.app .segment-rail-block[data-affected=true]{background:#8a7752}.app .segment-rail-block[data-selected=true]{background:#a2e8cb}
+.app .segment-rail-note{position:absolute;top:3px;width:8px;height:8px;transform:translateX(-50%) rotate(45deg);background:#ffe1a2;box-shadow:0 0 0 1px #382e18}
+.app .segment-rail-cut{position:absolute;top:0;height:100%;border-left:2px solid #e1e9e4}
+.app .segment-rail-times{display:flex;justify-content:space-between;margin:5px 0 12px;color:#a8bfb1;font-size:11px}
+.app .segment-strip{display:flex;gap:9px;overflow-x:auto;padding:3px 2px 12px;scrollbar-color:#527765 #122019;scroll-snap-type:x proximity;min-width:0}
+.app .segment-card{flex:0 0 128px;min-width:0;display:flex;flex-direction:column;gap:4px;margin:0;padding:7px;border:1px solid #41594c;border-radius:9px;background:#16271e;color:#d4e5da;cursor:pointer;text-align:left;scroll-snap-align:center;font:inherit;font-size:11px;white-space:normal}
+.app .segment-card[aria-pressed=true]{border:2px solid #9be6c9;padding:6px;background:#244333}.app .segment-card[data-affected=true]:not([aria-pressed=true]){border-color:#a28c5d;background:#2d2e20}
+.app .segment-card:focus-visible,.app .segment-navigation button:focus-visible,.app .segment-navigation select:focus-visible{outline:2px solid #abefd2;outline-offset:2px}
+.app .segment-card strong{font-size:13px}.app .segment-card-status{color:#b5d4c3}.app .segment-card.error .segment-card-status{color:#f6bb8e}.app .segment-card-notes{color:#f0d59c}.app .segment-card-boundary{color:#a5b9ad}.app .segment-card-impact{color:#e2cc99}
+.app .segment-thumbnail{display:block;position:relative;aspect-ratio:16/10;width:100%;overflow:hidden;background:#09110e;border-radius:5px}
+.app .segment-thumbnail img{display:block;width:100%;height:100%;object-fit:contain}
+.app .segment-thumbnail-placeholder{display:grid;position:absolute;inset:0;place-items:center;font-size:11px;color:#8ea79a}.app .segment-thumbnail-placeholder[hidden]{display:none}
+.app .segment-navigation{display:grid;grid-template-columns:1fr minmax(100px,1.3fr) 1fr;gap:8px;align-items:end;margin-top:8px}
+.app .segment-navigation label{margin:0;font-size:11px;color:#bdd2c5;min-width:0}.app .segment-navigation select{display:block;width:100%;max-width:100%;margin-top:5px;min-height:44px;background:#15251d;border:1px solid #4a6555;border-radius:7px;color:#daece1;padding:8px;font:inherit;font-size:12px}
+.app .segment-navigation .secondary{margin:0;padding:8px 6px;min-height:44px;min-width:0;font-size:12px;line-height:1.4;white-space:normal}
+.app .long-video-review .history-item[hidden]{display:none}.app .segment-review-tools{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.app .segment-review-tools button{min-height:44px;font-size:12px;padding:9px 12px}
+.app .segment-impact{border:1px solid #8a7651;border-radius:9px;background:#282a1d;padding:12px;color:#e6d6b6;line-height:1.6;font-size:12px}
+.app .segment-quality-note button{min-height:44px;margin-top:8px}.app .long-review-info{margin:12px 0}.app .long-review-info summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-size:13px}
+.app .segment-detail-heading{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;justify-content:space-between}.app .segment-detail-heading span{font-size:12px;color:#b6cdbf}
+.app .long-video-review .segment-show-all{margin:10px 0;min-height:44px}
+.app .bunny-segment-detail{padding:14px;border:1px solid #3a5549;border-radius:10px;margin-top:12px;font-size:13px;line-height:1.6}.app .bunny-segment-detail h4{margin:0 0 8px}
+@media(max-width:600px){.app .segment-timeline{padding:10px}.app .segment-card{flex-basis:112px}.app .segment-navigation{gap:5px;grid-template-columns:1fr minmax(90px,1.25fr) 1fr}.app .segment-navigation .secondary{font-size:11px}.app .segment-navigation select{font-size:12px}.app .segment-review-tools button{flex:1 1 140px}}

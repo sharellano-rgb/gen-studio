@@ -1,0 +1,91 @@
+/* Compact creation header. Secondary tools stay available without occupying full rows. */
+.app.creative-studio .content > .page-heading:not(.take-heading) { min-height: 0; margin: 0; }
+.app.creative-studio .content > .page-heading:not(.take-heading) h1 { font-size: 25px; margin: 0; }
+.app.creative-studio .content > .page-heading:not(.take-heading) p { display: none; }
+.app.creative-studio .take-heading { align-items: start; }
+.app.creative-studio .take-heading h1 { font-size: 25px; }
+.app .take-heading p { margin: 4px 0 0; font-size: 12px; }
+.app .take-back { margin: 0; padding: 0; }
+.app.creative-studio .object-editor {
+  grid-template-areas: 'heading heading' 'toolbar toolbar' 'composer stage' 'composer gallery' 'metrics metrics';
+}
+.app.creative-studio .motion-editor {
+  grid-template-areas: 'heading heading' 'toolbar toolbar' 'workspace workspace' 'metrics metrics';
+}
+.app .studio-toolbar {
+  grid-area: toolbar; grid-column: 1 / -1;
+  position: relative; display: grid; grid-template-columns: minmax(260px,360px) minmax(200px,300px) 1fr;
+  align-items: start; gap: 12px; min-width: 0; margin: 14px 0 18px; z-index: 25;
+}
+.app :is(.object-editor,.motion-editor) > .studio-toolbar { margin: 0; }
+.app.creative-studio .studio-toolbar > .modes { grid-area: auto; margin: 0; width: 100%; padding: 3px; }
+.app.creative-studio .studio-toolbar .mode { min-height: 40px; padding: 9px; font-size: 14px; white-space: nowrap; }
+.app .studio-toolbar > .engine-picker { grid-area: auto; margin: 0; min-width: 0; padding: 0; }
+.app .engine-picker-compact .engine-picker-summary { min-height: 48px; padding: 8px 12px; gap: 10px; }
+.app .engine-picker-compact .engine-picker-summary > span:first-child { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.app .engine-picker-compact .engine-picker-summary small { font-size: 12px; }
+.app .engine-picker-compact .engine-picker-summary strong { font-size: 13px; }
+.app .engine-picker-compact .engine-picker-action { font-size: 12px; }
+.app .engine-picker-compact .engine-picker-options { display: grid; grid-template-columns: minmax(0,1fr); padding: 0 8px 8px; }
+.app .engine-picker-compact .engine-picker-options[hidden] { display: none; }
+.app .engine-picker-compact .engine-picker-options button { min-height: 64px; }
+.app .studio-tools { position: relative; grid-column: 3; justify-self: end; min-width: 0; }
+.app .studio-tools > summary {
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  list-style: none; cursor: pointer; min-width: 48px; min-height: 48px;
+  border: 1px solid var(--studio-line); border-radius: 9px; padding: 10px 13px;
+  color: #c7cbd4; font-size: 13px; background: transparent;
+}
+.app .studio-tools > summary::-webkit-details-marker { display: none; }
+.app .studio-tools > summary:hover, .app .studio-tools[open] > summary { background: var(--studio-raised); color: var(--studio-text); }
+.app .studio-tools-panel {
+  position: absolute; top: calc(100% + 8px); right: 0; width: min(360px, calc(100vw - 32px));
+  max-height: min(70vh,600px); overflow-y: auto; overscroll-behavior: contain;
+  padding: 12px; border: 1px solid #454b57; border-radius: 12px;
+  background: #1d2026; box-shadow: 0 16px 48px #0008;
+}
+.app .studio-tools-panel > :is(.draft-shelf,.operation-scope) {
+  margin: 0; padding: 0; background: transparent; border: 0; border-radius: 0;
+}
+.app .studio-tools-panel > :is(.draft-shelf,.operation-scope) + * { border-top: 1px solid var(--studio-line); }
+.app .studio-tools-panel :is(.draft-shelf,.operation-scope) > summary { min-height: 44px; display: flex; align-items: center; padding: 9px 4px; color: var(--studio-text); font-size: 13px; }
+.app .studio-tools-panel .draft-shelf summary span { margin-left: 8px; color: var(--studio-muted); }
+.app .studio-tools-panel :is(.draft-shelf,.operation-scope) p { padding: 0 4px; color: var(--studio-muted); font-size: 13px; line-height: 1.6; margin: 0 0 12px; }
+.app .studio-tools-panel .draft-shelf-controls { display: flex; flex-direction: column; align-items: stretch; gap: 10px; padding: 4px 4px 14px; }
+.app .studio-tools-panel .draft-shelf-controls label { flex: auto; }
+.app .studio-tools-panel .draft-shelf-controls button { width: 100%; }
+.app .studio-tools-panel .draft-shelf-controls select { font-size: 14px; }
+.app.creative-studio .studio-tools-panel .take-reuse { width: 100%; max-width: none; margin-top: 8px; }
+.app .studio-tools-panel .studio-take-details { margin: 8px 0 0; padding: 12px 4px 2px; color: var(--studio-muted); font-size: 12px; }
+@media (max-width: 1100px) and (min-width: 901px) {
+  .app .studio-toolbar { grid-template-columns: minmax(240px,320px) minmax(200px,1fr) auto; }
+  .app .engine-picker-compact .engine-picker-summary small { display: none; }
+}
+@media (max-width: 900px) {
+  .app.creative-studio main > header { height: 36px; }
+  .app.creative-studio .content > .page-heading:not(.take-heading) h1, .app.creative-studio .take-heading h1 { font-size: 22px; line-height: 1.3; }
+  .app.creative-studio .take-heading { gap: 0; }
+  .app .take-heading p { font-size: 12px; }
+  .app.creative-studio .studio-toolbar {
+    display: grid; grid-template-columns: minmax(0,1fr) 44px;
+    grid-template-areas: 'modes tools' 'engine engine'; gap: 8px;
+    margin: 12px 0; align-items: start;
+  }
+  .app.creative-studio :is(.object-editor,.motion-editor) > .studio-toolbar { margin: 0; }
+  .app.creative-studio .studio-toolbar[data-mode=motion] { grid-template-areas: 'modes tools'; }
+  .app.creative-studio .studio-toolbar > .modes { grid-area: modes; }
+  .app.creative-studio .studio-toolbar .mode { font-size: 13px; min-height: 38px; padding: 9px 6px; }
+  .app.creative-studio .studio-toolbar > .engine-picker { grid-area: engine; }
+  .app .engine-picker-compact .engine-picker-summary { min-height: 44px; }
+  .app .engine-picker-compact .engine-picker-summary small { display: none; }
+  .app .studio-toolbar > .studio-tools { grid-area: tools; }
+  .app .studio-tools > summary { min-width: 44px; min-height: 44px; padding: 10px; }
+  .app .studio-tools > summary > span { display: none; }
+  .app .studio-tools-panel .draft-shelf-controls select { font-size: 16px; }
+  .app.creative-studio .studio-view-switch { padding: 3px; margin: 0 0 10px; }
+  .app.creative-studio :is(.object-editor,.motion-editor) > .studio-view-switch { margin: 0; }
+  .app .studio-view-switch > button { min-height: 40px; padding: 8px; }
+}
+@media (max-width: 360px) {
+  .app.creative-studio .studio-toolbar .mode { font-size: 12px; padding: 9px 4px; }
+}

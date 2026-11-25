@@ -1,0 +1,11 @@
+{
+  "comfy_url": "http://127.0.0.1:8188",
+  "ollama_url": "http://127.0.0.1:11434",
+  "port": 8790,
+  "generation_enabled": false,
+  "remote_enabled": false,
+  "tailscale_origin": "https://localhost.invalid",
+  "allowed_logins": [
+    "owner@example.invalid"
+  ]
+}

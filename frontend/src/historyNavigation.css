@@ -1,0 +1,25 @@
+/* History stays mounted for filters, loaded pages, expanded versions and focus. */
+.app .scene-library[hidden]{display:none}
+.app .take-heading{align-items:center;gap:20px;margin:0;min-width:0}
+.app .take-heading>div{min-width:0;flex:1}
+.app .take-back{display:inline-flex;align-items:center;min-height:44px;padding:6px 0;margin:0 0 5px;border:0;background:transparent;color:#a4ddc9;font:inherit;font-size:13px;cursor:pointer;text-align:left}
+.app .take-back:hover{text-decoration:underline;text-underline-offset:4px}
+.app .take-back:focus-visible{outline:2px solid #86e6cd;outline-offset:4px;border-radius:4px}
+.app .take-heading h1{font-size:23px;line-height:1.35;overflow-wrap:anywhere}
+.app .take-heading p{display:block;margin:5px 0 0;color:#aec4ba;line-height:1.6;font-size:12px;overflow-wrap:anywhere}
+.app .take-version{color:#8eaa9d;white-space:nowrap}
+.app .take-reuse{flex:none;min-height:44px;max-width:240px;padding:10px 14px;white-space:normal;line-height:1.5}
+.app .library-card[data-current-scene=true]{box-shadow:0 0 0 1px #78b89e}
+.app .scene-version[data-current-version=true]{background:#1b3029}
+.app .library-current{display:inline-block;color:#a4e7cd;font-size:11px;margin-bottom:10px}
+@media(max-width:900px){
+  .app .take-heading{display:flex;flex-direction:column;align-items:stretch;gap:12px}
+  .app.creative-studio .take-heading h1{font-size:20px}
+  .app.creative-studio .take-heading p{display:block}
+  .app .take-reuse{max-width:none;align-self:flex-start;font-size:12px}
+}
+
+.app .take-load-state{grid-column:1/-1;min-width:0;padding:22px}
+.app .take-load-state p{line-height:1.6;color:#b8cfc2}
+.app .take-load-state .history-actions{display:flex;flex-wrap:wrap;gap:10px}
+.app .take-load-state button{min-height:44px;margin:0;white-space:normal}

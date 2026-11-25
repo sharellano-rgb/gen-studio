@@ -1,0 +1,160 @@
+.cinema-comparison {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  color: #f0f2f3;
+  font-family: "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+.cinema-comparison[hidden],
+.cinema-comparison [hidden] { display: none !important; }
+.cinema-comparison-stage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  min-height: 160px;
+  border: 1px solid #303239;
+  border-radius: 14px;
+  background: #08090c;
+}
+.cinema-comparison-frame {
+  position: relative;
+  width: min(100%, calc(max(180px, min(58vh, calc(100vh - 370px))) * var(--comparison-aspect)));
+  width: min(100%, calc(max(180px, min(58dvh, calc(100dvh - 370px))) * var(--comparison-aspect)));
+  aspect-ratio: var(--comparison-aspect);
+  overflow: hidden;
+  background: #08090c;
+  cursor: ew-resize;
+  touch-action: pan-y;
+  user-select: none;
+}
+.cinema-comparison-frame video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  object-fit: contain;
+  pointer-events: none;
+  background: #08090c;
+}
+.cinema-comparison-original { clip-path: inset(0 calc(100% - var(--cinema-division)) 0 0); }
+.cinema-comparison-badge {
+  position: absolute;
+  top: 16px;
+  z-index: 1;
+  padding: 7px 11px;
+  border: 1px solid #ffffff26;
+  border-radius: 100px;
+  background: #111216d9;
+  color: #f5f6f6;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  pointer-events: none;
+}
+.cinema-comparison-before { left: 16px; }
+.cinema-comparison-after { right: 16px; }
+.cinema-comparison-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--cinema-division);
+  width: 2px;
+  transform: translateX(-50%);
+  background: #91e6ce;
+  box-shadow: 0 0 0 1px #11121640, 0 0 18px #11121680;
+  pointer-events: none;
+}
+.cinema-comparison-divider > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 44px;
+  height: 52px;
+  transform: translate(-50%, -50%);
+  border: 1px solid #91e6ce;
+  border-radius: 100px;
+  background: #111216e6;
+  color: #91e6ce;
+  font-size: 24px;
+}
+.cinema-comparison-divider i { width: 1px; height: 18px; background: #91e6ce70; }
+.cinema-comparison-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0 14px;
+}
+.cinema-comparison button {
+  min-height: 44px;
+  margin: 0;
+  padding: 10px 17px;
+  border: 1px solid #42454e;
+  border-radius: 10px;
+  background: #1a1c21;
+  color: #eef0f2;
+  font: 600 14px/1.3 "Segoe UI", sans-serif;
+  cursor: pointer;
+}
+.cinema-comparison button:hover:not(:disabled) { background: #26292f; border-color: #6d7d79; }
+.cinema-comparison button.cinema-comparison-play {
+  border-color: #91e6ce;
+  background: #91e6ce;
+  color: #111216;
+}
+.cinema-comparison button.cinema-comparison-play:hover:not(:disabled) { background: #b0f0de; }
+.cinema-comparison button.cinema-comparison-reveal { border-color: #91e6ce80; color: #a9eedb; }
+.cinema-comparison button.cinema-comparison-sound { margin-left: auto; }
+.cinema-comparison button:disabled { opacity: .5; cursor: default; }
+.cinema-comparison button:focus-visible,
+.cinema-comparison input:focus-visible { outline: 2px solid #91e6ce; outline-offset: 4px; }
+.cinema-comparison-timeline,
+.cinema-comparison-split { display: block; margin: 12px 0 0; font-size: 12px; }
+.cinema-comparison-timeline > span,
+.cinema-comparison-split > span { display: flex; align-items: center; justify-content: space-between; gap: 10px; color: #c2c6cc; }
+.cinema-comparison-timeline output { font-variant-numeric: tabular-nums; }
+.cinema-comparison-split { padding-top: 8px; border-top: 1px solid #303239; }
+.cinema-comparison-split > span > span:nth-child(2) { color: #969ca5; font-variant-numeric: tabular-nums; }
+.cinema-comparison input[type="range"] {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  margin: 0;
+  padding: 0;
+  accent-color: #91e6ce;
+  cursor: pointer;
+}
+.cinema-comparison .cinema-comparison-hint { margin: 0; color: #969ca5; font-size: 12px; line-height: 1.5; }
+.cinema-comparison .cinema-comparison-message { margin: 14px 0; color: #d8dee3; font-size: 14px; line-height: 1.5; }
+.cinema-comparison .cinema-comparison-message[role="alert"] { color: #ffc6bd; }
+@media (max-width: 600px) {
+  .cinema-comparison-stage { border-radius: 10px; }
+  .cinema-comparison-frame {
+    width: min(100%, calc(48vh * var(--comparison-aspect)));
+    width: min(100%, calc(48dvh * var(--comparison-aspect)));
+  }
+  .cinema-comparison-badge { top: 10px; font-size: 11px; padding: 6px 9px; }
+  .cinema-comparison-before { left: 10px; }
+  .cinema-comparison-after { right: 10px; }
+  .cinema-comparison-toolbar { gap: 8px; margin-top: 14px; }
+  .cinema-comparison-toolbar button { flex: 1 1 auto; padding: 10px 12px; }
+  .cinema-comparison button.cinema-comparison-sound { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cinema-comparison *, .cinema-comparison *::before, .cinema-comparison *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
